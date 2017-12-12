@@ -2629,6 +2629,7 @@ Markdown:
   - ".workbook"
   tm_scope: source.gfm
   language_id: 222
+  weight: 100
 Marko:
   group: HTML
   type: markup

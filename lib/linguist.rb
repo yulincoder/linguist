@@ -42,7 +42,8 @@ class << Linguist
 
       Linguist.instrument("linguist.detected", :blob => blob, :strategy => returning_strategy, :language => languages.first)
 
-      languages.first
+      ls = languages.each_with_index.sort_by { |l, idx| [-l.weight, idx] }.first
+      ls[0] if ls
     end
   end
 

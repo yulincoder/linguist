@@ -298,6 +298,7 @@ module Linguist
       # Set popular, and searchable flags
       @popular    = attributes.key?(:popular)    ? attributes[:popular]    : false
       @searchable = attributes.key?(:searchable) ? attributes[:searchable] : true
+      @weight     = attributes[:weight] || 0
 
       # If group name is set, save the name so we can lazy load it later
       if attributes[:group_name]
@@ -330,6 +331,11 @@ module Linguist
     #
     # Returns a hex color String.
     attr_reader :color
+
+    # Public: Get weight.
+    #
+    # Returns an integer.
+    attr_reader :weight
 
     # Public: Get aliases
     #
@@ -563,6 +569,7 @@ module Linguist
       :extensions        => Array(options['extensions']),
       :interpreters      => options['interpreters'].sort,
       :filenames         => options['filenames'],
+      :weight            => options['weight'],
       :popular           => popular.include?(name)
     )
   end
