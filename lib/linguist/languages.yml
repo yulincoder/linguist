@@ -1805,7 +1805,7 @@ HTTP:
   type: data
   extensions:
   - ".http"
-  tm_scope: source.httpspec
+  tm_scope: none
   ace_mode: text
   codemirror_mode: http
   codemirror_mime_type: message/http
