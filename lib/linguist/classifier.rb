@@ -110,7 +110,7 @@ module Linguist
         debug_dump_probabilities(tokens, language, scores[language]) if verbosity >= 1
       end
 
-      scores.sort { |a, b| b[1] <=> a[1] }.map { |score| [score[0], score[1]] }
+      [scores.sort { |a, b| b[1] <=> a[1] }.map { |score| [score[0], score[1]] }.first]
     end
 
     # Internal: Probably of set of tokens in a language occurring - P(D | C)
